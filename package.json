@@ -1,13 +1,12 @@
 {
   "name": "trythistrythat",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "test unit",
   "main": "index.js",
   "type": "module",
   "scripts": {},
   "bin": {
-    "4t": "4t.js",
-    "tttt": "4t.js"
+    "4t": "4t.js"
   },
   "repository": {
     "type": "git",
