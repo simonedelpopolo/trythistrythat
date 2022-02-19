@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { entry_point } from './index.js'
+import { entry_point, file, twd } from './index.js'
 
 // - splicing out from `process.argv` the paths for node and 4t.js
 process.argv.splice( 0, 2 )
@@ -17,6 +17,23 @@ switch ( Object.entries( digestive.command )[ 0 ][ 0 ] ) {
     
     case  'test':
         
-        ( ( options ) => {console.trace( options )} )( digestive.command.test )
+        
+        ( async ( options ) => {
+            
+            // eslint-disable-next-line default-case
+            switch( Object.entries( options )[ 0 ][ 0 ] ){
+                
+                case 'file': {
+                    
+                    const filename = `${ process.cwd() }/${ await twd.get() }/${ options.file.filename }`
+                    await file( filename )
+                    
+                }
+                
+                    break
+                
+            }
+        } )( digestive.command.test )
+        
         break
 }
