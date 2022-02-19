@@ -1,6 +1,7 @@
 import {
     entry_point__,
     file__,
+    loader__,
     options__,
     process_exit__,
     process_title__,
@@ -106,3 +107,5 @@ export const twd = twd__
 export function file( filename ){
     return file__( filename )
 }
+
+export const loader = loader__
