@@ -2,7 +2,7 @@
   "name": "trythistrythat",
   "version": "0.0.3",
   "description": "test unit",
-  "main": "index.js",
+  "main": "tttt.js",
   "type": "module",
   "scripts": {},
   "bin": {
