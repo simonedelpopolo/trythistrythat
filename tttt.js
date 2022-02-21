@@ -22,6 +22,13 @@ export function failed( status ){
 }
 
 /**
+ *
+ */
+export function end_test(){
+    output__.event.emit( 'end' )
+}
+
+/**
  * @param func
  */
 export async function deeeeepEqual( func ){

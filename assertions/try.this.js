@@ -44,4 +44,6 @@ export default async () => {
         tttt.failed( true )
         console.trace( error )
     }
+    
+    tttt.end_test()
 }
