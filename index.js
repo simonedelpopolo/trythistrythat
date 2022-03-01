@@ -1,5 +1,6 @@
 import {
     entry_point__,
+    event__,
     file__,
     loader__,
     options__,
@@ -109,3 +110,4 @@ export function file( filename ){
 }
 
 export const loader = loader__
+export const event = event__
