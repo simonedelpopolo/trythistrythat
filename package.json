@@ -1,6 +1,6 @@
 {
   "name": "trythistrythat",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "test unit",
   "main": "tttt.js",
   "type": "module",
