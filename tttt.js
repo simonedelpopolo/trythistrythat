@@ -15,6 +15,13 @@ export async function describe( ...info ){
 }
 
 /**
+ * @param {...any} info
+ */
+export async function separator( ){
+    return output__.separator( )
+}
+
+/**
  * @param status
  */
 export function failed( status ){

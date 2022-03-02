@@ -1,6 +1,6 @@
 {
   "name": "trythistrythat",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "test unit",
   "main": "tttt.js",
   "type": "module",
@@ -20,7 +20,7 @@
     "eslint-plugin-jsdoc": "^37.8.2"
   },
   "dependencies": {
-    "oftypes": "^0.4.4",
+    "oftypes": "^0.5.4",
     "boolean-jokes": "^1.4.7",
     "json-swiss-knife": "^1.5.9"
   },
