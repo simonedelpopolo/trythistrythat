@@ -3,19 +3,19 @@ import * as tttt from '../tttt.js'
 
 export default async () => {
     
-    await tttt.describe( 'try.this'.green(), 'assertion ->'.red(), 0 )
-    await tttt.describe( '  listing statements'.green(), '⬇︎'.red(), '\n' )
-    await tttt.describe( '    oKi'.green(), '⚠︎'.red(), 'statement ->'.red(), 0 )
-    await tttt.describe( '    deeeeeeeeeeep'.green(), '⚠︎'.red(), 'statement ->'.red(), 1 )
+    tttt.describe( 'try.this'.green(), 'assertion ->'.red(), 0 )
+    tttt.describe( '  listing statements'.green(), '⬇︎'.red(), '\n' )
+    tttt.describe( '    oKi'.green(), '⚠︎'.red(), 'statement ->'.red(), 0 )
+    tttt.describe( '    deeeeeeeeeeep'.green(), '⚠︎'.red(), 'statement ->'.red(), 1 )
     
-    await tttt.describe( '\n', '__________________________________________________________________________', '\n' )
+    tttt.separator()
     
     let error
     error = await tttt.oki( async () => {
-        await tttt.describe( 'oKi.'.green(), 'statement ->'.red(), 0, '\n' )
+        tttt.describe( 'oKi.'.green(), 'statement ->'.red(), 0, '\n' )
         
         return {
-            expected: 5,
+            expected: 10,
             actual: 10,
             error: 'gniiiiiiii oKi'
         }
@@ -23,27 +23,33 @@ export default async () => {
     } )
     
     if( error instanceof Error ) {
+        console.log( 'test failed'.red() )
         tttt.failed( true )
         console.trace( error )
-    }
+    }else
+        console.log( 'test passed'.green() )
     
-    await tttt.describe( '\n', '__________________________________________________________________________', '\n' )
+    
+    tttt.separator()
     
     error = await tttt.deeeeepEqual( async () => {
-        await tttt.describe( 'deeeeeeeeeeep.'.green(), 'statement ->'.red(), 1, '\n' )
+        tttt.describe( 'deeeeeeeeeeep.'.green(), 'statement ->'.red(), 1, '\n' )
         
         return {
-            expected: [ 5 ],
+            expected: [ 10 ],
             actual: [ 10 ],
             error: 'gniiiiiiii deeeeeeep'
         }
         
     } )
     
-    if( error instanceof Error ){
+    if( error instanceof Error ) {
+        console.log( 'test failed'.red() )
         tttt.failed( true )
         console.trace( error )
-    }
+    }else
+        console.log( 'test passed'.green() )
     
-    tttt.end_test()
+
+    tttt.end_test( tttt.id() )
 }

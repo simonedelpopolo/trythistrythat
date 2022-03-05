@@ -5,28 +5,29 @@ export default async () => {
     
     let error
     
-    await tttt.describe( 'try.that'.green(), 'assertion ->'.red(), 0 )
-    await tttt.describe( '  listing statements'.green(), '⬇︎'.red(), '\n' )
-    await tttt.describe( '    deeeeeeeeeeep'.green(), '⚠︎'.red(), 'statement ->'.red(), 1 )
+    tttt.describe( 'try.that'.green(), 'assertion ->'.red(), 0 )
+    tttt.describe( '  listing statements'.green(), '⬇︎'.red(), '\n' )
+    tttt.describe( '    deeeeeeeeeeep'.green(), '⚠︎'.red(), 'statement ->'.red(), 1 )
     
-    await tttt.describe( '\n', '__________________________________________________________________________', '\n' )
+    tttt.describe( '\n', '__________________________________________________________________________', '\n' )
     
     error = await tttt.deeeeepEqual( async () => {
-        await tttt.describe( 'deeeeeeeeeeep.'.green(), 'statement ->'.red(), 1, '\n' )
+        tttt.describe( 'deeeeeeeeeeep.'.green(), 'statement ->'.red(), 1, '\n' )
         
         return {
-            expected: [ 5 ],
+            expected: [ 10 ],
             actual: [ 10 ],
             error: 'ERROR deeeeeeep'
         }
         
     } )
     
-    if( error instanceof Error ){
+    if( error instanceof Error ) {
+        console.log( 'test failed'.red() )
         tttt.failed( true )
         console.trace( error )
-    }
+    }else
+        console.log( 'test passed'.green() )
     
-    await tttt.describe( 'test passed'.green() )
-    tttt.end_test()
+    tttt.end_test( tttt.id() )
 }

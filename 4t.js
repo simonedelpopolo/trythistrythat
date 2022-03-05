@@ -49,10 +49,8 @@ switch ( Object.entries( digestive.command )[ 0 ][ 0 ] ) {
     case 'unit':
     
         ( async ( unit ) => {
-    
-            console.trace( unit )
+            
             for( const file_ in unit ){
-                
                 const filename = `${ process.cwd() }/${ await twd.get() }/${ unit[ file_ ] }`
                 await file( filename )
             }

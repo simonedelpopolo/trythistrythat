@@ -1,50 +1,93 @@
 import { deeeeep__, oki__, output__ } from './lib/exporter.js'
 
 /**
- * @param func
+ * A node:assert.ok wrapper.
+ *
+ * @param {()=>{}} func - a test function.
+ * @returns {AssertionError|boolean}
  */
 export async function oki( func ){
     return oki__( func )
 }
 
 /**
- * @param {...any} info
+ * Describe the statements that are going to be executed.
+ *
+ * @param {any} info - .
  */
-export async function describe( ...info ){
+export function describe( ...info ){
     return output__.describe( ...info )
 }
 
 /**
- * @param {...any} info
+ *
  */
-export async function separator( ){
+export function id(){
+    return output__.id
+}
+
+/**
+ * Drawn a separator line.
+ *
+ */
+export function separator( ){
     return output__.separator( )
 }
 
 /**
- * @param status
+ * Tells if the test has failed or not.
+ *
+ * @param {boolean} status - the test status. Default false. set it to true when the test fails.
  */
 export function failed( status ){
     output__.failed = status
 }
 
 /**
+ * Call this when the test is over.
  *
+ * @param id
  */
-export function end_test(){
-    output__.event.emit( 'end' )
+export function end_test( id ){
+    output__.event.emit( id )
 }
 
 /**
- * @param func
+ * A node:assert.deepEqual wrapper.
+ *
+ * @param {()=>{}} func - a test function.
+ * @returns {AssertionError|boolean}
  */
 export async function deeeeepEqual( func ){
     return deeeeep__.equal( func )
 }
 
 /**
- * @param func
+ * A node:assert.notDeepEqual wrapper.
+ *
+ * @param {()=>{}} func - a test function.
+ * @returns {AssertionError|boolean}
+ */
+export async function notDeeeeepEqual( func ){
+    return deeeeep__.notEqual( func )
+}
+
+/**
+ * A node:assert.deepStrictEqual wrapper.
+ *
+ * @param {()=>{}} func - a test function.
+ * @returns {AssertionError|boolean}
  */
 export async function deeeeepStrictEqual( func ){
     return deeeeep__.strictEqual( func )
+}
+
+/**
+ * A node:assert.notDeepStrictEqual wrapper.
+ *
+ * @param {()=>{}} func - a test function.
+ * @returns {AssertionError|boolean}
+ */
+export async function notDeeeeepStrictEqual( func ){
+    return deeeeep__.notStrictEqual( func )
 }
