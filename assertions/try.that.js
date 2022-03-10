@@ -1,7 +1,7 @@
 /* eslint-disable jsdoc/require-jsdoc */
 import * as tttt from '../tttt.js'
 
-export default async () => {
+export default async ( id ) => {
     
     let error
     
@@ -29,5 +29,5 @@ export default async () => {
     }else
         console.log( 'test passed'.green() )
     
-    tttt.end_test( tttt.id() )
+    await tttt.end_test( id )
 }

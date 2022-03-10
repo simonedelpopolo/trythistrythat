@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { entry_point, file, twd } from './index.js'
+import { entry_point, file, twd, unit } from './index.js'
 
 // - splicing out from `process.argv` the paths for node and 4t.js
 process.argv.splice( 0, 2 )
@@ -48,12 +48,9 @@ switch ( Object.entries( digestive.command )[ 0 ][ 0 ] ) {
     
     case 'unit':
     
-        ( async ( unit ) => {
+        ( async ( dir_listing ) => {
             
-            for( const file_ in unit ){
-                const filename = `${ process.cwd() }/${ await twd.get() }/${ unit[ file_ ] }`
-                await file( filename )
-            }
+            await unit( dir_listing )
             
             
         } )( digestive.command.unit )

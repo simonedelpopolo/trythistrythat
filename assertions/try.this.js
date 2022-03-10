@@ -1,7 +1,7 @@
 /* eslint-disable jsdoc/require-jsdoc */
 import * as tttt from '../tttt.js'
 
-export default async () => {
+export default async ( id ) => {
     
     tttt.describe( 'try.this'.green(), 'assertion ->'.red(), 0 )
     tttt.describe( '  listing statements'.green(), '⬇︎'.red(), '\n' )
@@ -51,5 +51,5 @@ export default async () => {
         console.log( 'test passed'.green() )
     
 
-    tttt.end_test( tttt.id() )
+    await tttt.end_test( id )
 }

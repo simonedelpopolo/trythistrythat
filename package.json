@@ -1,11 +1,12 @@
 {
   "name": "trythistrythat",
-  "version": "0.0.17",
+  "version": "0.1.24",
   "description": "test unit",
   "main": "tttt.js",
   "type": "module",
   "scripts": {
-    "unit-test": "./4t.js unit"
+    "unit-test": "./4t.js unit",
+    "test-file": "./4t.js test --file='options(filename:try.this.js)'"
   },
   "bin": {
     "4t": "4t.js"
@@ -18,13 +19,14 @@
     "test"
   ],
   "devDependencies": {
-    "eslint": "^8.8.0",
-    "eslint-plugin-jsdoc": "^37.8.2"
+    "eslint": "^8.10.0",
+    "eslint-plugin-jsdoc": "^37.9.7"
   },
   "dependencies": {
-    "oftypes": "^0.6.6",
-    "boolean-jokes": "^1.4.7",
-    "json-swiss-knife": "^1.5.9"
+    "autocannon": "^7.7.0",
+    "boolean-jokes": "^1.5.1",
+    "json-swiss-knife": "^1.6.10",
+    "oftypes": "^0.7.0"
   },
   "author": "Simone Del Popolo",
   "license": "Apache-2.0",
