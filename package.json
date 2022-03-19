@@ -1,6 +1,6 @@
 {
   "name": "trythistrythat",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "description": "test unit",
   "main": "tttt.js",
   "type": "module",
@@ -19,14 +19,13 @@
     "test"
   ],
   "devDependencies": {
-    "eslint": "^8.10.0",
-    "eslint-plugin-jsdoc": "^37.9.7"
+    "eslint": "^8.11.0",
+    "eslint-plugin-jsdoc": "^38.0.5"
   },
   "dependencies": {
-    "autocannon": "^7.7.0",
     "boolean-jokes": "^1.5.1",
     "json-swiss-knife": "^1.6.10",
-    "oftypes": "^0.7.0"
+    "oftypes": "^0.8.0"
   },
   "author": "Simone Del Popolo",
   "license": "Apache-2.0",
