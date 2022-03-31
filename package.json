@@ -1,32 +1,36 @@
 {
   "name": "trythistrythat",
-  "version": "0.1.30",
-  "description": "test unit",
+  "version": "1.0.0",
+  "description": "UNIT tests",
   "main": "tttt.js",
   "type": "module",
   "scripts": {
-    "unit-test": "./4t.js unit",
-    "test-file": "./4t.js test --file='options(filename:try.this.js)'"
+    "UNIT-tests": "./4t.js unit",
+    "try.this.test": "./4t.js test --file='options(filename:try.this.test.js)'"
   },
   "bin": {
     "4t": "4t.js"
+  },
+  "devDependencies": {
+    "eslint": "^8.12.0",
+    "eslint-plugin-jsdoc": "^38.1.4"
+  },
+  "dependencies": {
+    "cli-decors": "latest",
+    "json-swiss-knife": "latest",
+    "oftypes": "latest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/simonedelpopolo/trythistrythat.git"
   },
   "keywords": [
-    "test"
+    "UNIT",
+    "test",
+    "tests",
+    "simple",
+    "automation"
   ],
-  "devDependencies": {
-    "eslint": "^8.11.0",
-    "eslint-plugin-jsdoc": "^38.0.5"
-  },
-  "dependencies": {
-    "boolean-jokes": "latest",
-    "json-swiss-knife": "latest",
-    "oftypes": "latest"
-  },
   "author": "Simone Del Popolo",
   "license": "Apache-2.0",
   "bugs": {
