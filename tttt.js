@@ -39,6 +39,16 @@ export function separator( ){
 }
 
 /**
+ * It draws a new line or many as specified with the argument repeat.
+ *
+ * @param {number=} [repeat=undefined] - number of new lines. undefined/0/1 it console.log() just one time
+ * @returns {*}
+ */
+export function line( repeat = undefined ){
+    return output__.line( repeat )
+}
+
+/**
  * Tells if the test has failed or not.
  *
  * @param {boolean} status - unit test. Default false. set it to true when the test fails.
