@@ -5,4 +5,3 @@
 .eslintignore
 assertions
 .github
-lib/errors/4tError.js

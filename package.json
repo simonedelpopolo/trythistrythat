@@ -1,10 +1,12 @@
 {
   "name": "trythistrythat",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "UNIT tests",
   "main": "tttt.js",
   "type": "module",
   "scripts": {
+    "eslint": "npx eslint . --ext .js",
+    "eslint-fix": "npx eslint --fix . --ext .js",
     "UNIT-tests": "./4t.js unit",
     "try.this.test": "./4t.js test --file='options(filename:try.this.test.js)'"
   },

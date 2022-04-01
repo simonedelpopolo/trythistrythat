@@ -130,6 +130,7 @@ export async function execute( id ){
 }
 
 /**
+ * Run all the files into Test Working Directory (twd).
  *
  * @param {string[]} dir_listing - array from readdir
  * @returns {Promise<*>}

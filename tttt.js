@@ -14,13 +14,16 @@ export async function oki( func ){
  * Describe the statements that are going to be executed.
  *
  * @param {any} info - .
+ * @returns {*}
  */
 export function describe( ...info ){
     return output__.describe( ...info )
 }
 
 /**
+ * The unit test id.
  *
+ * @returns {*}
  */
 export function id(){
     return output__.id
@@ -29,6 +32,7 @@ export function id(){
 /**
  * Drawn a separator line.
  *
+ * @returns {*}
  */
 export function separator( ){
     return output__.separator( )
@@ -37,7 +41,7 @@ export function separator( ){
 /**
  * Tells if the test has failed or not.
  *
- * @param {boolean} status - the test status. Default false. set it to true when the test fails.
+ * @param {boolean} status - unit test. Default false. set it to true when the test fails.
  */
 export function failed( status ){
     output__.failed = status
@@ -46,7 +50,7 @@ export function failed( status ){
 /**
  * Call this when the test is over.
  *
- * @param id
+ * @param {string} id - unit test
  */
 export function end_test( id ){
     output__.event.emit( id )

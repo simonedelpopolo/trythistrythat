@@ -23,39 +23,39 @@ const digestive = await entry_point( process.argv )
 
 // eslint-disable-next-line default-case
 switch ( Object.entries( digestive.command )[ 0 ][ 0 ] ) {
-    
+
     case  'test':
-        
-        
+
+
         ( async ( options ) => {
-            
+
             // eslint-disable-next-line default-case
             switch( Object.entries( options )[ 0 ][ 0 ] ){
-                
+
                 case 'file': {
-                    
+
                     const filename = `${ process.cwd() }/${ await twd.get() }/${ options.file.filename }`
                     await file( filename )
-                    
+
                 }
-                
+
                     break
-                
+
             }
         } )( digestive.command.test )
-        
+
         break
-    
+
     case 'unit':
-    
+
         ( async ( dir_listing ) => {
-            
+
             await unit( dir_listing )
-            
-            
+
+
         } )( digestive.command.unit )
-        
+
         break
-        
-    
+
+
 }
