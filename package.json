@@ -1,30 +1,27 @@
 {
   "name": "trythistrythat",
-  "version": "1.2.4",
+  "version": "1.3.0",
+  "license": "Apache-2.0",
   "description": "UNIT tests",
-  "main": "tttt.js",
   "type": "module",
+  "main": "tttt.js",
+  "bin": {
+    "4t": "4t.js"
+  },
   "scripts": {
     "eslint": "npx eslint . --ext .js",
     "eslint-fix": "npx eslint --fix . --ext .js",
     "UNIT-tests": "./4t.js unit",
     "try.this.test": "./4t.js test --file='options(filename:try.this.test.js)'"
   },
-  "bin": {
-    "4t": "4t.js"
-  },
   "devDependencies": {
     "eslint": "^8.12.0",
-    "eslint-plugin-jsdoc": "^38.1.4"
+    "eslint-plugin-jsdoc": "^38.1.6"
   },
   "dependencies": {
     "cli-decors": "latest",
     "json-swiss-knife": "latest",
     "oftypes": "latest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/simonedelpopolo/trythistrythat.git"
   },
   "keywords": [
     "UNIT",
@@ -33,10 +30,17 @@
     "simple",
     "automation"
   ],
-  "author": "Simone Del Popolo",
-  "license": "Apache-2.0",
+  "author": {
+    "name": "Simone Del Popolo",
+    "email": "simonedelpopolo@outlook.com",
+    "url": "https://github.com/simonedelpopolo"
+  },
+  "homepage": "https://github.com/simonedelpopolo/trythistrythat#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonedelpopolo/trythistrythat.git"
+  },
   "bugs": {
     "url": "https://github.com/simonedelpopolo/trythistrythat/issues"
-  },
-  "homepage": "https://github.com/simonedelpopolo/trythistrythat#readme"
+  }
 }

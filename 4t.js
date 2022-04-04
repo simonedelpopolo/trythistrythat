@@ -16,7 +16,10 @@ process.title = '4t'
  *       print: string
  *     }
  *   },
- *   unit:string[]
+ *   unit:{
+ *       twd: string[],
+ *       exclude: string[]
+ *   }
  * }}}
  */
 const digestive = await entry_point( process.argv )
@@ -48,9 +51,9 @@ switch ( Object.entries( digestive.command )[ 0 ][ 0 ] ) {
 
     case 'unit':
 
-        ( async ( dir_listing ) => {
+        ( async ( options ) => {
 
-            await unit( dir_listing )
+            await unit( options )
 
 
         } )( digestive.command.unit )
