@@ -14,7 +14,7 @@ jobs:
           node-version: '16.14.2'
           registry-url: 'https://registry.npmjs.org'
       - run: npm install
-      - run: npm run UNIT-tests
+      - run: npm test
       - run: npm run try.this.test
       - run: npm publish
         env:
