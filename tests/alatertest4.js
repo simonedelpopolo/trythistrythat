@@ -4,7 +4,7 @@ export default async( id ) => {
     await tttt.describe( 'later coming test 4' )
 
     /**
-     *
+     * Simulating log-running test.
      */
     function later (){
         tttt.end_test( id )
