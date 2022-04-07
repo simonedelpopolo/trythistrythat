@@ -3,7 +3,7 @@ import * as tttt_private from '../index.js'
 
 export default async ( id ) => {
 
-    await tttt_private.tttt_twd_set( 'assertions' )
+    await tttt_private.tttt_twd_set( 'tests' )
 
     console.trace( tttt_private.tttt_twd_get().stringFrom() )
 

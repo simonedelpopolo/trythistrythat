@@ -266,7 +266,7 @@ export function tttt_twd_get(){
  * Object [ tttt.twd.set ]
  * twd setter.
  *
- * @param {string} [path=assertions] - test working directory
+ * @param {string} [path=tests] - test working directory
  * @throws
  * @returns {Promise<void>|void}
  */

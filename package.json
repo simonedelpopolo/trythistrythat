@@ -1,6 +1,6 @@
 {
   "name": "trythistrythat",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "license": "Apache-2.0",
   "description": "UNIT tests",
   "type": "module",
@@ -9,10 +9,9 @@
     "4t": "4t.js"
   },
   "scripts": {
-    "eslint": "npx eslint . --ext .js",
-    "eslint-fix": "npx eslint --fix . --ext .js",
-    "UNIT-tests": "./4t.js --twd=assertions unit",
-    "try.this.test": "./4t.js --twd=assertions test --file='options(filename:try.this.test.js)'"
+    "lint": "npx eslint . --ext .js",
+    "test": "./4t.js --twd=tests unit",
+    "try.this.test": "./4t.js test --file='options(filename:try.this.test.js)'"
   },
   "devDependencies": {
     "eslint": "^8.12.0",
