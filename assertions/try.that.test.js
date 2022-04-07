@@ -1,11 +1,11 @@
 /* eslint-disable jsdoc/require-jsdoc */
-import * as tttt from '../tttt.js'
+import * as tttt from '../public.js'
 
-export default async () => {
+export default async ( id ) => {
 
     const error = await tttt.deeeeepEqual( async () => {
 
-        tttt.describe( 'deepEqual TEST'.green(), 'statement ->'.red(), 0, '\n' )
+        await tttt.describe( 'deepEqual TEST'.green(), 'statement ->'.red(), 0, '\n' )
 
         return {
             expected: [ 10 ],
@@ -17,13 +17,13 @@ export default async () => {
 
     if( error instanceof Error ) {
 
-        tttt.failed( true )
-        tttt.describe( 'test failed'.red() )
-        tttt.describe( error )
+        await tttt.failed( true )
+        await tttt.describe( 'test failed'.red() )
+        await tttt.describe( error )
 
     }
 
-    else tttt.describe( 'test passed'.green() )
+    else await tttt.describe( 'test passed'.green() )
 
-    await tttt.end_test( tttt.id() )
+    await tttt.end_test( id )
 }

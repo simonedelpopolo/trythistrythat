@@ -1,27 +1,28 @@
 {
   "name": "trythistrythat",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "license": "Apache-2.0",
   "description": "UNIT tests",
   "type": "module",
-  "main": "tttt.js",
+  "main": "public.js",
   "bin": {
     "4t": "4t.js"
   },
   "scripts": {
     "eslint": "npx eslint . --ext .js",
     "eslint-fix": "npx eslint --fix . --ext .js",
-    "UNIT-tests": "./4t.js unit",
-    "try.this.test": "./4t.js test --file='options(filename:try.this.test.js)'"
+    "UNIT-tests": "./4t.js --twd=assertions unit",
+    "try.this.test": "./4t.js --twd=assertions test --file='options(filename:try.this.test.js)'"
   },
   "devDependencies": {
     "eslint": "^8.12.0",
-    "eslint-plugin-jsdoc": "^38.1.6"
+    "eslint-plugin-jsdoc": "^38.1.6",
+    "v8-to-istanbul": "^8.1.1"
   },
   "dependencies": {
-    "cli-decors": "latest",
-    "json-swiss-knife": "latest",
-    "oftypes": "latest"
+    "cli-decors": "^1.0.1",
+    "json-swiss-knife": "^1.6.13",
+    "oftypes": "^1.7.1"
   },
   "keywords": [
     "UNIT",

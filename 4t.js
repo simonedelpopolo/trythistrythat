@@ -1,11 +1,13 @@
 #!/usr/bin/env node
-import { entry_point, file, twd, unit } from './index.js'
+import { entry_point, file, unit } from './index.js'
 
 // - splicing out from `process.argv` the paths for node and 4t.js
 process.argv.splice( 0, 2 )
 
 // - process.title
 process.title = '4t'
+
+const entry_point_run = await entry_point( process.argv )
 
 /**
  * @type {Promise | {
@@ -22,43 +24,25 @@ process.title = '4t'
  *   }
  * }}}
  */
-const digestive = await entry_point( process.argv )
+const tttt = await entry_point_run
 
-// eslint-disable-next-line default-case
-switch ( Object.entries( digestive.command )[ 0 ][ 0 ] ) {
+if( typeof tttt !== 'undefined' && typeof tttt?.command !== 'undefined' ){
 
-    case  'test':
+    // eslint-disable-next-line default-case
+    switch ( Object.entries( tttt.command )[ 0 ][ 0 ] ) {
 
+        case  'test':
 
-        ( async ( options ) => {
+            await file( tttt.command.test.file )
 
-            // eslint-disable-next-line default-case
-            switch( Object.entries( options )[ 0 ][ 0 ] ){
+            break
 
-                case 'file': {
+        case 'unit':
 
-                    const filename = `${ process.cwd() }/${ await twd.get() }/${ options.file.filename }`
-                    await file( filename )
+            await unit( tttt.command.unit )
 
-                }
-
-                    break
-
-            }
-        } )( digestive.command.test )
-
-        break
-
-    case 'unit':
-
-        ( async ( options ) => {
-
-            await unit( options )
+            break
 
 
-        } )( digestive.command.unit )
-
-        break
-
-
+    }
 }

@@ -1,4 +1,4 @@
-name: Node.js Tests and npmjs publishing
+name: trythistrythat & npmjs publishing
 
 on:
   push:
@@ -14,6 +14,8 @@ jobs:
           node-version: '16.13.1'
           registry-url: 'https://registry.npmjs.org'
       - run: npm install
+      - run: npm run UNIT-tests
+      - run: npm run try.this.test
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
