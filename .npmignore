@@ -3,5 +3,5 @@
 .idea
 .eslintrc.json
 .eslintignore
-assertions
+tests
 .github
