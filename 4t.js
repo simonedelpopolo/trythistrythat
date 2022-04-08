@@ -1,5 +1,10 @@
 #!/usr/bin/env node
-import { entry_point, file, unit } from './index.js'
+import {
+    add,
+    entry_point,
+    file,
+    unit
+} from './index.js'
 
 // - splicing out from `process.argv` the paths for node and 4t.js
 process.argv.splice( 0, 2 )
@@ -12,10 +17,15 @@ const entry_point_run = await entry_point( process.argv )
 /**
  * @type {Promise | {
  * command:{
+ *   add:{
+ *       describe: string,
+ *       filename:string,
+ *       imports:string[],
+ *       twd: string
+ *   },
  *   test:{
  *     file: {
- *       filename: string,
- *       print: string
+ *       filename: string
  *     }
  *   },
  *   unit:{
@@ -30,6 +40,12 @@ if( typeof tttt !== 'undefined' && typeof tttt?.command !== 'undefined' ){
 
     // eslint-disable-next-line default-case
     switch ( Object.entries( tttt.command )[ 0 ][ 0 ] ) {
+
+        case 'add':
+
+            await add( tttt.command.add )
+
+            break
 
         case  'test':
 

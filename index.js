@@ -1,5 +1,6 @@
 import { output_id } from './lib/tttt/output/id.js'
 import {
+    add__,
     container__,
     entry_point__,
     execute__,
@@ -117,6 +118,17 @@ export async function options( flag_value, flag_name ){
  *
  * @private
  */
+
+/**
+ * Object [ tttt.add ]
+ * adding unit test
+ *
+ * @param {{describe: string|null=,filename:string|null=,imports:string[]|null=,twd: string|null=}} options - from shell
+ * @returns {Promise<void> | void}
+ */
+export async function add( options ) {
+    return add__( options )
+}
 
 /**
  * Object [ tttt.timer.end ]
