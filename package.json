@@ -1,6 +1,6 @@
 {
   "name": "trythistrythat",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "license": "Apache-2.0",
   "description": "UNIT tests",
   "type": "module",
@@ -15,12 +15,12 @@
   },
   "devDependencies": {
     "eslint": "^8.12.0",
-    "eslint-plugin-jsdoc": "^39.0.0"
+    "eslint-plugin-jsdoc": "^39.0.1"
   },
   "dependencies": {
     "cli-decors": "^1.0.1",
     "json-swiss-knife": "^1.6.13",
-    "oftypes": "^1.7.11"
+    "oftypes": "^1.7.12"
   },
   "keywords": [
     "UNIT",
