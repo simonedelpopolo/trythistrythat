@@ -1,6 +1,6 @@
 {
   "name": "trythistrythat",
-  "version": "1.5.3",
+  "version": "1.6.0",
   "license": "Apache-2.0",
   "description": "UNIT tests",
   "type": "module",
@@ -11,13 +11,15 @@
   "scripts": {
     "lint": "npx eslint . --ext .js",
     "test": "./4t.js --twd=tests unit",
-    "try.this.test": "./4t.js test --file='options(filename:try.this.test.js)'"
+    "try.this.test": "./4t.js test --file='options(filename:try.this.test.js)'",
+    "coverage": "./4t.js --coverage --twd=tests unit"
   },
   "devDependencies": {
-    "eslint": "^8.12.0",
+    "eslint": "^8.13.0",
     "eslint-plugin-jsdoc": "^39.0.1"
   },
   "dependencies": {
+    "c8": "^7.11.0",
     "cli-decors": "^1.0.1",
     "json-swiss-knife": "^1.6.13",
     "oftypes": "^1.7.12"
