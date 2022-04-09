@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { access } from 'node:fs/promises'
 import { spawn } from 'node:child_process'
 import {
     add,
@@ -13,7 +14,11 @@ process.argv.splice( 0, 2 )
 if( process.argv.includes( '--coverage' ) ){
     process.argv.splice( process.argv.indexOf( '--coverage' ), 1 )
 
-    const spawn_argv = [ 'c8', './4t.js', process.argv ]
+    let tttt_process = '4t'
+    if ( await access( process.cwd() + '/node_modules/trythistrythat' ).catch( error => error ) instanceof Error )
+        tttt_process = './4t.js'
+
+    const spawn_argv = [ 'c8', tttt_process, process.argv ]
     spawn( 'npx', spawn_argv.flat(), {
         stdio:[ 'ignore', process.stdout, process.stderr ]
     } )
