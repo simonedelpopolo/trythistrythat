@@ -1,12 +1,15 @@
 #!/usr/bin/env node
 import { access } from 'node:fs/promises'
 import { spawn } from 'node:child_process'
+import { URL } from 'url'
 import {
     add,
     entry_point,
     file,
     unit
 } from './index.js'
+
+const tttt_executable = new URL( '', import.meta.url ).pathname
 
 // - splicing out from `process.argv` the paths for node and 4t.js
 process.argv.splice( 0, 2 )
@@ -16,7 +19,7 @@ if( process.argv.includes( '--coverage' ) ){
 
     let tttt_process = '4t'
     if ( await access( process.cwd() + '/node_modules/trythistrythat' ).catch( error => error ) instanceof Error )
-        tttt_process = './4t.js'
+        tttt_process = `${tttt_executable}`
 
     const spawn_argv = [ 'c8', tttt_process, process.argv ]
     spawn( 'npx', spawn_argv.flat(), {
