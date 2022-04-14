@@ -1,13 +1,19 @@
 #!/usr/bin/env node
 import { access } from 'node:fs/promises'
+import { entry_point } from '@cli-blaze/input'
+import { error_code } from '@cli-blaze/error'
+import { exit } from '@cli-blaze/activity'
+import { override } from '@cli-blaze/decors'
 import { spawn } from 'node:child_process'
 import { URL } from 'url'
 import {
     add,
-    entry_point,
     file,
+    tttt_process,
     unit
 } from './index.js'
+
+await override()
 
 const tttt_executable = new URL( '', import.meta.url ).pathname
 
@@ -30,33 +36,13 @@ else{
 // - process.title
     process.title = '4t'
 
-    const entry_point_run = await entry_point( process.argv )
-
     /**
-     * @type {Promise | {
-     * command:{
-     *   add:{
-     *       describe: string,
-     *       filename:string,
-     *       imports:string[],
-     *       twd: string
-     *   },
-     *   test:{
-     *     file: {
-     *       filename: string
-     *     }
-     *   },
-     *   unit:{
-     *       twd: string[],
-     *       exclude: string[]
-     *   }
-     * }}}
+     * @type {Promise<{[p: string]: any}>|{[p: string]: any}}
      */
-    const tttt = await entry_point_run
+    const tttt = await entry_point( process.argv, { executable:[ '4t' ], '4t':tttt_process } )
 
-    if( typeof tttt !== 'undefined' && typeof tttt?.command !== 'undefined' ){
+    if( typeof tttt !== 'undefined' && typeof tttt.command !== 'undefined' ){
 
-        // eslint-disable-next-line default-case
         switch ( Object.entries( tttt.command )[ 0 ][ 0 ] ) {
 
             case 'add':
@@ -77,7 +63,9 @@ else{
 
                 break
 
-
+            default:
+                await exit( 'unknown error', undefined, error_code.INTERNAL )
+                break
         }
     }
 }

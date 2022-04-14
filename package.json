@@ -1,6 +1,6 @@
 {
   "name": "trythistrythat",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "license": "Apache-2.0",
   "description": "UNIT tests",
   "type": "module",
@@ -16,11 +16,14 @@
   },
   "devDependencies": {
     "eslint": "^8.13.0",
-    "eslint-plugin-jsdoc": "^39.0.1"
+    "eslint-plugin-jsdoc": "^39.2.1"
   },
   "dependencies": {
+    "@cli-blaze/activity": "^0.0.2",
+    "@cli-blaze/decors": "^0.0.3",
+    "@cli-blaze/error": "^0.0.2",
+    "@cli-blaze/input": "^0.0.2",
     "c8": "^7.11.0",
-    "cli-decors": "^1.0.1",
     "json-swiss-knife": "^1.6.13",
     "oftypes": "^1.7.12"
   },
