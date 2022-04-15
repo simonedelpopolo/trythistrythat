@@ -1,6 +1,6 @@
 {
   "name": "trythistrythat",
-  "version": "1.6.4",
+  "version": "1.6.5",
   "license": "Apache-2.0",
   "description": "UNIT tests",
   "type": "module",
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@cli-blaze/activity": "^0.0.2",
-    "@cli-blaze/decors": "^0.0.4",
+    "@cli-blaze/decors": "^0.0.5",
     "@cli-blaze/error": "^0.0.2",
     "@cli-blaze/input": "^0.0.2",
     "c8": "^7.11.0",
