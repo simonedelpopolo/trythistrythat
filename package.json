@@ -1,6 +1,6 @@
 {
   "name": "trythistrythat",
-  "version": "1.6.6",
+  "version": "1.7.0",
   "license": "Apache-2.0",
   "description": "UNIT tests",
   "type": "module",
@@ -11,7 +11,7 @@
   "scripts": {
     "lint": "npx eslint . --ext .js",
     "test": "./4t.js --twd=tests unit",
-    "try.this.test": "./4t.js test --file='options(filename:try.this.test.js)'",
+    "try.this.test": "./4t.js test --file=try.this.test.js",
     "coverage": "./4t.js --coverage --twd=tests unit"
   },
   "devDependencies": {

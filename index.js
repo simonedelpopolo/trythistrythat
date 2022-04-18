@@ -27,7 +27,7 @@ import {
  * 4t process.
  *
  * @param {Object<{[unknown:string]: any}>} process_parsed_argv - process.argv parsed.
- * @returns {Promise<Object<{command: {unit: {twd: string[], exclude: string[]}, test: {file: {filename: string}}}}>>}
+ * @returns {Promise<Object<{command: {unit: {twd: string[], exclude: string[]}, test: {file: {filename: string}},directory:{path:string}}}>>}
  */
 export async function tttt_process( process_parsed_argv ){
     return tttt_process__[ Symbol.for( 'input.process_title.tttt_process' ) ]( process_parsed_argv )

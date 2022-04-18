@@ -53,6 +53,11 @@ else{
 
             case  'test':
 
+                if( tttt.command.test.directory.path !== null ) {
+                    await unit( { twd: [ tttt.command.test.directory.path ], exclude: tttt.command.test.directory.exclude } )
+                    break
+                }
+
                 await file( tttt.command.test.file )
 
                 break
