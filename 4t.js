@@ -1,6 +1,8 @@
 #!/usr/bin/env node
+const whole_timer = process.hrtime.bigint()
 import { access } from 'node:fs/promises'
 import add from './lib/tttt/add.js'
+import { describe } from './index.js'
 import { entry_point } from '@cli-blaze/input'
 import { error_code } from '@cli-blaze/error'
 import { exit } from '@cli-blaze/activity'
@@ -74,3 +76,4 @@ else{
 }
 
 
+process.on( 'exit', () => describe( 'overall time'.yellow(), '|'.black(), String( Number( process.hrtime.bigint() - whole_timer ) / 1_000_000 + 'ms' ).red() ) )
