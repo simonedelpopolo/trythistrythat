@@ -1,17 +1,15 @@
 #!/usr/bin/env node
 import { access } from 'node:fs/promises'
+import add from './lib/tttt/add.js'
 import { entry_point } from '@cli-blaze/input'
 import { error_code } from '@cli-blaze/error'
 import { exit } from '@cli-blaze/activity'
+import file from './lib/tttt/file.js'
 import { override } from '@cli-blaze/decors'
 import { spawn } from 'node:child_process'
+import tttt_process from './lib/input/tttt/tttt_process.js'
+import unit from './lib/tttt/unit.js'
 import { URL } from 'url'
-import {
-    add,
-    file,
-    tttt_process,
-    unit
-} from './index.js'
 
 await override()
 

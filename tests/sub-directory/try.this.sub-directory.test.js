@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-jsdoc */
-import * as tttt from '../../public.js'
+import * as tttt from '../../index.js'
 
 export default async ( id ) => {
 

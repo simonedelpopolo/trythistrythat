@@ -1,11 +1,13 @@
-import * as tttt from '../public.js'
-import * as tttt_private from '../index.js'
+import * as tttt from '../index.js'
+import { stringFromBuffer } from '../index.js'
+import tttt_twd_get from '../lib/tttt/twd/get.js'
+import tttt_twd_set from '../lib/tttt/twd/set.js'
 
 export default async ( id ) => {
 
-    await tttt_private.tttt_twd_set( 'tests' )
+    await tttt_twd_set( 'tests' )
 
-    console.trace( tttt_private.tttt_twd_get().stringFrom() )
+    console.trace( stringFromBuffer( tttt_twd_get() ) )
 
     tttt.end_test( id )
 }
