@@ -12,10 +12,10 @@ Every contribution can give me ideas, hints and clarification related to JavaScr
 
 Feel free and welcome to contribute.
 
-- Follow the [CODE OF CONDUCT](https://github.com/simonedelpopolo/koorie/blob/main/.github/CODE_OF_CONDUCT.md)
+- Follow the [CODE OF CONDUCT](https://github.com/simonedelpopolo/trythistrythat/blob/main/.github/CODE_OF_CONDUCT.md)
 
-- [Bug Report](https://github.com/simonedelpopolo/koorie/blob/main/.github/ISSUE_TEMPLATE/bug_report.md)
+- [Bug Report](https://github.com/simonedelpopolo/trythistrythat/blob/main/.github/ISSUE_TEMPLATE/bug_report.md)
 
-- [Feature Request](https://github.com/simonedelpopolo/koorie/blob/main/.github/ISSUE_TEMPLATE/feature_request.md)
+- [Feature Request](https://github.com/simonedelpopolo/trythistrythat/blob/main/.github/ISSUE_TEMPLATE/feature_request.md)
 
 if you have any question just text me.

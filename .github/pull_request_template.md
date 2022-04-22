@@ -1,8 +1,8 @@
 ## Prerequisites checklist
 
-- [ ] I have read the [CODE OF CONDUCT](https://github.com/simonedelpopolo/koorie/blob/main/.github/CODE_OF_CONDUCT.md)
+- [ ] I have read the [CODE OF CONDUCT](https://github.com/simonedelpopolo/trythistrythat/blob/main/.github/CODE_OF_CONDUCT.md)
 
-- [ ] I have read the [CONTRIBUTING](https://github.com/simonedelpopolo/koorie/blob/main/.github/CONTRIBUTIING.md)
+- [ ] I have read the [CONTRIBUTING](https://github.com/simonedelpopolo/trythistrythat/blob/main/.github/CONTRIBUTIING.md)
 
 ### What is the purpose of this pull request?
 
