@@ -1,11 +1,12 @@
 /* eslint-disable jsdoc/require-jsdoc */
 import * as tttt from '../../index.js'
+import { Blaze } from '@cli-blaze/decors'
 
 export default async ( id ) => {
 
     const error = await tttt.oki( async () => {
 
-        await tttt.describe( 'sub directory crawling UNIT test', 0, '\n' )
+        tttt.describe( 'sub directory crawling UNIT test', 0, '\n' )
 
         return {
             expected: 'string',
@@ -16,13 +17,13 @@ export default async ( id ) => {
 
     if( error instanceof Error ) {
 
-        await tttt.failed( true )
-        await tttt.describe( 'test failed'.red() )
-        await tttt.describe( error )
+        tttt.failed( true )
+        tttt.describe( Blaze.red( 'test failed' ) )
+        tttt.describe( error )
 
     }
 
-    else await tttt.describe( 'test passed'.green() )
+    else tttt.describe( Blaze.green( 'test passed' ) )
 
-    await tttt.end_test( id )
+    tttt.end_test( id )
 }

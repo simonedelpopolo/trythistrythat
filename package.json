@@ -1,6 +1,6 @@
 {
   "name": "trythistrythat",
-  "version": "1.8.3",
+  "version": "1.8.4",
   "license": "Apache-2.0",
   "description": "UNIT tests",
   "type": "module",
@@ -15,14 +15,16 @@
     "coverage": "./4t.js --coverage --twd=tests unit"
   },
   "devDependencies": {
-    "eslint": "^8.13.0",
-    "eslint-plugin-jsdoc": "^39.2.7"
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/plugin-syntax-import-assertions": "^7.16.7",
+    "eslint": "^8.14.0",
+    "eslint-plugin-jsdoc": "^39.2.9"
   },
   "dependencies": {
-    "@cli-blaze/activity": "^1.0.0",
-    "@cli-blaze/decors": "^1.0.0",
-    "@cli-blaze/error": "^1.0.0",
-    "@cli-blaze/input": "^1.0.0",
+    "@cli-blaze/activity": "^1.0.2",
+    "@cli-blaze/decors": "^1.0.2",
+    "@cli-blaze/error": "^1.0.1",
+    "@cli-blaze/input": "^1.0.3",
     "c8": "^7.11.2",
     "oftypes": "^1.8.2"
   },
