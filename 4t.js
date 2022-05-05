@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --experimental-json-modules --experimental-import-meta-resolve
 const overall_execution_time_start = process.hrtime.bigint()
 import { access } from 'node:fs/promises'
 import add from './lib/tttt/add.js'
