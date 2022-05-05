@@ -1,5 +1,20 @@
 import { default as failed_ } from './lib/tttt/output/failed.js'
 
+/**
+ * JSDoc typedef
+ */
+/**
+ * Represents an async function.
+ *
+ * @typedef {()=>Promise} AsyncFunction
+ */
+/**
+ * OftypesError.
+ *
+ * @typedef {OftypesError} OftypesError
+ */
+
+export { default as resolvers } from './lib/tttt/assert/resolvers.js'
 export { default as describe } from './lib/tttt/output/describe.js'
 export { end as end_test } from './lib/tttt/output/event/emitter/end.js'
 export { default as line } from './lib/tttt/output/line.js'
@@ -23,16 +38,4 @@ export const failed = status => {failed_[ 0 ] = status}
  */
 export const stringFromBuffer = ( buffer, encoding ) => new TextDecoder( encoding || 'utf-8' ).decode( buffer ).replace( /\0/g, '' )
 
-/**
- * JSDoc typedef
- */
-/**
- * Represents an async function.
- *
- * @typedef {()=>Promise} AsyncFunction
- */
-/**
- * OftypesError.
- *
- * @typedef {OftypesError} OftypesError
- */
+
