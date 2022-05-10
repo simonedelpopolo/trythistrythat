@@ -13,33 +13,33 @@ import { Writable } from 'node:stream'
  */
 export default async ( id ) => {
 
-    tttt.describe( '# test version flag correctly' )
-    await tttt.separator( 240, 75, '~' )
-    await tttt.line()
+  tttt.describe( '# test version flag correctly' )
+  await tttt.separator( 240, 75, '~' )
+  await tttt.line()
 
-    const myWritable = new Writable( {
-        async write( v ) {
-            const version = Buffer.from( await ( await import( '../../package.json', { assert: { type: 'json' } } ) ).default.version )
-            const result = await tttt.deeeeepStrictEqual( async() => {
+  const myWritable = new Writable( {
+    async write( v ) {
+      const version = Buffer.from( await ( await import( '../../package.json', { assert: { type: 'json' } } ) ).default.version )
+      const result = await tttt.deeeeepStrictEqual( async() => {
 
-                trace( Blaze.blue( `flag: ${v.slice( 0, -1 )}` ), Blaze.magenta( `package: ${version}` ) )
+        trace( Blaze.blue( `flag: ${v.slice( 0, -1 )}` ), Blaze.magenta( `package: ${version}` ) )
 
-                return {
-                    actual: v.slice( 0, -1 ),
-                    expected: version
-                }
-            } )
-
-            if( await error_( result ) ) {
-                tttt.failed( true )
-                tttt.describe( Blaze.red( 'failed' ) )
-            }
-            else tttt.describe( Blaze.green( 'passed' ) )
+        return {
+          actual: v.slice( 0, -1 ),
+          expected: version
         }
-    } )
-    const ttttProcess = spawn( './4t.js', [ '--version' ] )
-    ttttProcess.stdout.pipe( myWritable )
+      } )
 
-    ttttProcess.on( 'exit', () => tttt.end_test( id ) )
+      if( await error_( result ) ) {
+        tttt.failed( true )
+        tttt.describe( Blaze.red( 'failed' ) )
+      }
+      else tttt.describe( Blaze.green( 'passed' ) )
+    }
+  } )
+  const ttttProcess = spawn( './4t.js', [ '--version' ] )
+  ttttProcess.stdout.pipe( myWritable )
+
+  ttttProcess.on( 'exit', () => tttt.end_test( id ) )
 
 }

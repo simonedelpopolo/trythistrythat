@@ -19,58 +19,58 @@ const tttt_executable = new URL( '', import.meta.url ).pathname
 process.argv.splice( 0, 2 )
 
 if( process.argv.includes( '--coverage' ) ){
-    process.argv.splice( process.argv.indexOf( '--coverage' ), 1 )
+  process.argv.splice( process.argv.indexOf( '--coverage' ), 1 )
 
-    let tttt_process = '4t'
-    if ( await access( process.cwd() + '/node_modules/trythistrythat' ).catch( error => error ) instanceof Error )
-        tttt_process = `${tttt_executable}`
+  let tttt_process = '4t'
+  if ( await access( process.cwd() + '/node_modules/trythistrythat' ).catch( error => error ) instanceof Error )
+    tttt_process = `${tttt_executable}`
 
-    const spawn_argv = [ 'c8', tttt_process, process.argv ]
-    spawn( 'npx', spawn_argv.flat(), {
-        stdio:[ 'ignore', process.stdout, process.stderr ]
-    } )
+  const spawn_argv = [ 'c8', tttt_process, process.argv ]
+  spawn( 'npx', spawn_argv.flat(), {
+    stdio:[ 'ignore', process.stdout, process.stderr ]
+  } )
 }
 else{
 // - process.title
-    process.title = '4t'
+  process.title = '4t'
 
-    /**
-     * @type {Promise<{[p: string]: any}>|{[p: string]: any}}
-     */
-    const tttt = await entry_point( process.argv, { executable:[ '4t' ], '4t':tttt_process } )
+  /**
+   * @type {Promise<{[p: string]: any}>|{[p: string]: any}}
+   */
+  const tttt = await entry_point( process.argv, { executable:[ '4t' ], '4t':tttt_process } )
 
-    if( typeof tttt !== 'undefined' && typeof tttt.command !== 'undefined' ){
+  if( typeof tttt !== 'undefined' && typeof tttt.command !== 'undefined' ){
 
-        switch ( Object.entries( tttt.command )[ 0 ][ 0 ] ) {
+    switch ( Object.entries( tttt.command )[ 0 ][ 0 ] ) {
 
-            case 'add':
+      case 'add':
 
-                await add( tttt.command.add )
+        await add( tttt.command.add )
 
-                break
+        break
 
-            case  'test':
+      case  'test':
 
-                if( tttt.command.test.directory.path !== null ) {
-                    await unit( { twd: [ tttt.command.test.directory.path ], exclude: tttt.command.test.directory.exclude } )
-                    break
-                }
-
-                await file( tttt.command.test.file )
-
-                break
-
-            case 'unit':
-
-                await unit( tttt.command.unit )
-
-                break
-
-            default:
-                await exit( 'unknown error', undefined, error_code.INTERNAL )
-                break
+        if( tttt.command.test.directory.path !== null ) {
+          await unit( { twd: [ tttt.command.test.directory.path ], exclude: tttt.command.test.directory.exclude } )
+          break
         }
+
+        await file( tttt.command.test.file )
+
+        break
+
+      case 'unit':
+
+        await unit( tttt.command.unit )
+
+        break
+
+      default:
+        await exit( 'unknown error', undefined, error_code.INTERNAL )
+        break
     }
+  }
 }
 
 process.on( 'exit', () => describe( Blaze.yellow( 'overall execution time' ), Blaze.black( '|' ), Blaze.red( String( Number( process.hrtime.bigint() - overall_execution_time_start ) / 1_000_000 + 'ms' ) ) ) )
