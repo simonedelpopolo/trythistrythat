@@ -30,12 +30,14 @@ async function handler( units ){
       const AsyncFunctionUnitTest = UnitTest.asyncFunction
       const truthy = async () => {
 
+        await separator()
+        describe( `|                  ${Blaze.b_yellow( id )}        | ID ` )
+        await separator()
         describe( Blaze.color( 240, 'filename' ), UnitTest.filename )
         await separator( 240, undefined, '*' )
         await line()
 
         output_event.on( id, async id => {
-
           await line()
           await separator()
           describe( `|                  ${Blaze.b_yellow( id )}        | ${ timer_end()} ` )
@@ -44,11 +46,10 @@ async function handler( units ){
           delete queue_container[ id ]
 
           if( output_failed[ 0 ] )
-            process.exit( 1 )
+            parentPort.postMessage( true )
 
           if( Object.keys( queue_container ).length === 0 )
             parentPort.close()
-
         } )
         await AsyncFunctionUnitTest( id )
       }
@@ -70,7 +71,7 @@ async function handler( units ){
     }
   } )
 
-  init( units )
+  await init( units )
 }
 if( !isMainThread ) parentPort.on( 'message', handler )
 

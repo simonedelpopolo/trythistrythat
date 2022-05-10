@@ -1,6 +1,6 @@
 {
   "name": "trythistrythat",
-  "version": "1.8.12",
+  "version": "1.8.17",
   "license": "Apache-2.0",
   "description": "UNIT tests",
   "type": "module",
@@ -10,9 +10,8 @@
   },
   "scripts": {
     "lint": "npx eslint . --ext .js",
-    "test": "./4t.js --twd=tests unit --exclude=queue.test.js",
-    "try.this.test": "./4t.js test --file=try.this.test.js",
-    "coverage": "./4t.js --coverage --twd=tests unit --exclude=queue.test.js"
+    "test": "./4t.js --twd=tests unit",
+    "coverage": "./4t.js --coverage --twd=tests unit"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.17.0",
