@@ -6,6 +6,7 @@ export { default as line } from './lib/tttt/output/line.js'
 export { oki } from './lib/tttt/assert/oki.js'
 export { default as separator } from './lib/tttt/output/separator.js'
 export { deeeeepEqual, deeeeepStrictEqual, notDeeeeepEqual, notDeeeeepStrictEqual } from './lib/tttt/assert/deeeeep.js'
+export { default as resolvers } from './lib/tttt/assert/resolvers.js'
 
 /**
  * Tells if the test has failed or not.
